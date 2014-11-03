@@ -1,6 +1,8 @@
 package io.github.codecademyminecraftmods.vigilance;
 
+import io.github.codecademyminecraftmods.vigilance.hacks.Fly;
 import io.github.codecademyminecraftmods.vigilance.hacks.Fullbright;
+import io.github.codecademyminecraftmods.vigilance.hacks.KillAura;
 import io.github.codecademyminecraftmods.vigilance.hacks.Regen;
 import io.github.codecademyminecraftmods.vigilance.hacks.Xray;
 import io.github.codecademyminecraftmods.vigilance.util.CheckKey;
@@ -16,6 +18,8 @@ public class Vigilance {
 	public static Fullbright fullbright = new Fullbright(minecraft);
 	public static Xray xray = new Xray(minecraft);
 	public static Regen rgn = new Regen(minecraft);
+	public static Fly fly = new Fly(minecraft);
+	public static KillAura ka = new KillAura(minecraft);
 	
 	public static void checkForKeyPress() {
 		if(ck.checkKey(Keyboard.KEY_F)) {
@@ -24,8 +28,14 @@ public class Vigilance {
 		if(ck.checkKey(Keyboard.KEY_X)) {
 			xray.toggle();
 		}
-		if(ck.checkKey(Keyboard.KEY_R)) {
+		if(ck.checkKey(Keyboard.KEY_C)) {
 			rgn.turnOn();
+		}
+		if(ck.checkKey(Keyboard.KEY_Z)) {
+			fly.toggle();
+		}
+		if(ck.checkKey(Keyboard.KEY_R)) {
+			ka.toggle();
 		}
 	}
 

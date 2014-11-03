@@ -3,27 +3,28 @@ package io.github.codecademyminecraftmods.vigilance.hacks;
 import io.github.codecademyminecraftmods.vigilance.util.Vars;
 import net.minecraft.client.Minecraft;
 
-public class Xray extends Hack {
+public class Fly extends Hack {
 	
-	public Xray(Minecraft mc) {
-		super(EnumHacks.XRAY, mc);
+	public Fly(Minecraft mc) {
+		super(EnumHacks.FLY, mc);
 	}
- 
+	 
 	@Override
 	public void turnOn() {
-		Vars.xray = true;
-		minecraft.renderGlobal.loadRenderers();
+		Vars.fly = true;
+		minecraft.thePlayer.capabilities.allowFlying = true;
 	}
 	
 	@Override
 	public void turnOff() {
-		Vars.xray = false;
-		minecraft.renderGlobal.loadRenderers();
+		Vars.fly = false;
+		minecraft.thePlayer.capabilities.allowFlying = false;
+		minecraft.thePlayer.capabilities.isFlying = false;
 	}
 
 	@Override
 	public void toggle() {
-		if(Vars.xray) {
+		if(Vars.fly) {
 			turnOff();
 		} else {
 			turnOn();

@@ -6,10 +6,9 @@ import net.minecraft.client.Minecraft;
 public class Fullbright extends Hack {
 	
 	private float oldGamma;
-	private Minecraft minecraft;
 	
 	public Fullbright(Minecraft mc) {
-		super(EnumHacks.FULLBRIGHT);
+		super(EnumHacks.FULLBRIGHT, mc);
 		minecraft = mc;
 		oldGamma = minecraft.gameSettings.gammaSetting;
 	}

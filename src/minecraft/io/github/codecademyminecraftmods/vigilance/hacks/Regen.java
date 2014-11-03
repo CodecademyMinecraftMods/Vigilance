@@ -5,12 +5,9 @@ import net.minecraft.client.Minecraft;
 import net.minecraft.potion.PotionEffect;
 
 public class Regen extends Hack {
-
-	private Minecraft minecraft;
 	
 	public Regen(Minecraft mc) {
-		super(EnumHacks.REGEN);
-		minecraft = mc;
+		super(EnumHacks.REGEN, mc);
 	}
 	 
 	@Override
