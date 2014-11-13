@@ -1,7 +1,7 @@
 package io.github.codecademyminecraftmods.vigilance.hacks;
 
-import io.github.codecademyminecraftmods.vigilance.util.Vars;
 import net.minecraft.client.Minecraft;
+import net.minecraft.potion.Potion;
 import net.minecraft.potion.PotionEffect;
 
 public class Regen extends Hack {
@@ -12,13 +12,10 @@ public class Regen extends Hack {
 	 
 	@Override
 	public void turnOn() {
-		minecraft.thePlayer.setHealth(minecraft.thePlayer.getMaxHealth());
+		this.minecraft.thePlayer.setHealth(this.minecraft.thePlayer.getMaxHealth());
 	}
-	
+
 	@Override
 	public void turnOff() {}
-	
-	@Override
-	public void toggle() {}
 		
 }

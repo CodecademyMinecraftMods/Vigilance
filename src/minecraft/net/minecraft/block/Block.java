@@ -1,6 +1,7 @@
 package net.minecraft.block;
 
-import io.github.codecademyminecraftmods.vigilance.util.Vars;
+import io.github.codecademyminecraftmods.vigilance.Vigilance;
+import io.github.codecademyminecraftmods.vigilance.hacks.Xray;
 
 import java.util.Arrays;
 import java.util.Iterator;
@@ -577,10 +578,10 @@ public class Block
 
     public boolean shouldSideBeRendered(IBlockAccess p_149646_1_, int p_149646_2_, int p_149646_3_, int p_149646_4_, int p_149646_5_)
     {
-    	if(!Vars.xray) {
-    		return p_149646_5_ == 0 && this.field_149760_C > 0.0D ? true : (p_149646_5_ == 1 && this.field_149756_F < 1.0D ? true : (p_149646_5_ == 2 && this.field_149754_D > 0.0D ? true : (p_149646_5_ == 3 && this.field_149757_G < 1.0D ? true : (p_149646_5_ == 4 && this.field_149759_B > 0.0D ? true : (p_149646_5_ == 5 && this.field_149755_E < 1.0D ? true : !p_149646_1_.getBlock(p_149646_2_, p_149646_3_, p_149646_4_).isOpaqueCube())))));
+    	if(!Vigilance.xray.isActive()) {
+        	return p_149646_5_ == 0 && this.field_149760_C > 0.0D ? true : (p_149646_5_ == 1 && this.field_149756_F < 1.0D ? true : (p_149646_5_ == 2 && this.field_149754_D > 0.0D ? true : (p_149646_5_ == 3 && this.field_149757_G < 1.0D ? true : (p_149646_5_ == 4 && this.field_149759_B > 0.0D ? true : (p_149646_5_ == 5 && this.field_149755_E < 1.0D ? true : !p_149646_1_.getBlock(p_149646_2_, p_149646_3_, p_149646_4_).isOpaqueCube())))));
     	} else {
-    		return Arrays.asList(Vars.xrayBlocks).contains(getIdFromBlock(this));
+    		return Arrays.asList(Xray.blocks).contains(this);
     	}
     }
 

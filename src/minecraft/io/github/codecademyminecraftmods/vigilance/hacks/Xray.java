@@ -1,9 +1,12 @@
 package io.github.codecademyminecraftmods.vigilance.hacks;
 
-import io.github.codecademyminecraftmods.vigilance.util.Vars;
+import net.minecraft.block.Block;
 import net.minecraft.client.Minecraft;
+import net.minecraft.init.Blocks;
 
 public class Xray extends Hack {
+	
+	public static Block[] blocks = new Block[]{Blocks.diamond_ore, Blocks.iron_ore, Blocks.redstone_ore, Blocks.coal_ore, Blocks.emerald_ore, Blocks.lapis_ore, Blocks.chest, Blocks.gold_ore};
 	
 	public Xray(Minecraft mc) {
 		super(EnumHacks.XRAY, mc);
@@ -11,23 +14,14 @@ public class Xray extends Hack {
  
 	@Override
 	public void turnOn() {
-		Vars.xray = true;
+		this.active = true;
 		minecraft.renderGlobal.loadRenderers();
 	}
 	
 	@Override
 	public void turnOff() {
-		Vars.xray = false;
+		this.active = false;
 		minecraft.renderGlobal.loadRenderers();
-	}
-
-	@Override
-	public void toggle() {
-		if(Vars.xray) {
-			turnOff();
-		} else {
-			turnOn();
-		}
 	}
 	
 }

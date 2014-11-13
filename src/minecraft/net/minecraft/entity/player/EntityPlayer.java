@@ -1,10 +1,6 @@
 package net.minecraft.entity.player;
 
-import com.google.common.base.Charsets;
-import com.mojang.authlib.GameProfile;
-
 import io.github.codecademyminecraftmods.vigilance.Vigilance;
-import io.github.codecademyminecraftmods.vigilance.util.Vars;
 
 import java.util.Collection;
 import java.util.Iterator;
@@ -76,6 +72,9 @@ import net.minecraft.world.EnumDifficulty;
 import net.minecraft.world.World;
 import net.minecraft.world.WorldSettings;
 import net.minecraft.world.chunk.IChunkProvider;
+
+import com.google.common.base.Charsets;
+import com.mojang.authlib.GameProfile;
 
 public abstract class EntityPlayer extends EntityLivingBase implements ICommandSender
 {
@@ -664,7 +663,8 @@ public abstract class EntityPlayer extends EntityLivingBase implements ICommandS
                 }
             }
         }
-        if(Vars.ka) Vigilance.ka.tick();
+        if(Vigilance.ka.isActive()) Vigilance.ka.tick();
+		if(Vigilance.aafk.isActive()) Vigilance.aafk.tick();
     }
 
     private void collideWithPlayer(Entity p_71044_1_)

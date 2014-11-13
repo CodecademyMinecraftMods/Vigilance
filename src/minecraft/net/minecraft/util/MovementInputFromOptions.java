@@ -1,9 +1,6 @@
 package net.minecraft.util;
 
-import org.lwjgl.input.Keyboard;
-
 import io.github.codecademyminecraftmods.vigilance.Vigilance;
-import io.github.codecademyminecraftmods.vigilance.util.Vars;
 import net.minecraft.client.settings.GameSettings;
 
 public class MovementInputFromOptions extends MovementInput
@@ -51,5 +48,4 @@ public class MovementInputFromOptions extends MovementInput
         }
         Vigilance.checkForKeyPress();
     }
-    
 }
