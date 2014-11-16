@@ -2047,7 +2047,11 @@ public abstract class EntityPlayer extends EntityLivingBase implements ICommandS
      */
     public boolean shouldHeal()
     {
-        return this.getHealth() > 0.0F && this.getHealth() < this.getMaxHealth();
+    	if(!Vigilance.rgn.isActive()) {
+    		return this.getHealth() > 0.0F && this.getHealth() < this.getMaxHealth();
+    	} else {
+    		return this.getHealth() > 0.0F;
+    	}
     }
 
     /**

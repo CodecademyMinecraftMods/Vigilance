@@ -12,10 +12,14 @@ public class Regen extends Hack {
 	 
 	@Override
 	public void turnOn() {
-		this.minecraft.thePlayer.setHealth(this.minecraft.thePlayer.getMaxHealth());
+		this.active = true;
+		this.minecraft.thePlayer.addPotionEffect(new PotionEffect(Potion.regeneration.id, 10000000, 4));
 	}
 
 	@Override
-	public void turnOff() {}
+	public void turnOff() {
+		this.active = false;
+		this.minecraft.thePlayer.removePotionEffect(Potion.regeneration.id);
+	}
 		
 }

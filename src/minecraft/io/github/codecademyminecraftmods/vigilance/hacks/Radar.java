@@ -24,7 +24,7 @@ public class Radar extends Hack {
         int pos = 1;
         ScaledResolution sc = new ScaledResolution(this.minecraft, this.minecraft.displayWidth, this.minecraft.displayHeight);
         for(Object o : this.minecraft.theWorld.getLoadedEntityList()) {
-            if(o instanceof EntityPlayer && o != null) {
+            if(o instanceof EntityPlayer && o != null && o != this.minecraft.thePlayer) {
                 EntityPlayer enemy = (EntityPlayer)o;
                 int dis = (int)this.minecraft.thePlayer.getDistanceToEntity(enemy);
                 

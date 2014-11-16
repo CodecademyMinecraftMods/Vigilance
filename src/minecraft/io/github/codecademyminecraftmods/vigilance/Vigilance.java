@@ -5,8 +5,9 @@ import io.github.codecademyminecraftmods.vigilance.hacks.Fly;
 import io.github.codecademyminecraftmods.vigilance.hacks.Freecam;
 import io.github.codecademyminecraftmods.vigilance.hacks.Fullbright;
 import io.github.codecademyminecraftmods.vigilance.hacks.KillAura;
-import io.github.codecademyminecraftmods.vigilance.hacks.Regen;
+import io.github.codecademyminecraftmods.vigilance.hacks.NoSwear;
 import io.github.codecademyminecraftmods.vigilance.hacks.Radar;
+import io.github.codecademyminecraftmods.vigilance.hacks.Regen;
 import io.github.codecademyminecraftmods.vigilance.hacks.Xray;
 import io.github.codecademyminecraftmods.vigilance.util.CheckKey;
 import net.minecraft.client.Minecraft;
@@ -26,6 +27,47 @@ public class Vigilance {
 	public static AntiAFK aafk = new AntiAFK(minecraft);
 	public static Freecam fc = new Freecam(minecraft);
 	public static Radar rdr = new Radar(minecraft);
+	public static NoSwear nswr = new NoSwear(minecraft);
+	
+	public static void tick() {
+        int pos = 1;
+        if(fullbright.isActive()) {
+            minecraft.fontRenderer.drawStringWithShadow("Fullbright", 2, 12 * pos, 0xFFFFFF);
+            pos++;
+        }
+        if(xray.isActive()) {
+            minecraft.fontRenderer.drawStringWithShadow("Xray", 2, 12 * pos, 0xFFFFFF);
+            pos++;
+        }
+        if(rgn.isActive()) {
+            minecraft.fontRenderer.drawStringWithShadow("Regen", 2, 12 * pos, 0xFFFFFF);
+            pos++;
+        }
+        if(fly.isActive()) {
+            minecraft.fontRenderer.drawStringWithShadow("Fly", 2, 12 * pos, 0xFFFFFF);
+            pos++;
+        }
+        if(ka.isActive()) {
+            minecraft.fontRenderer.drawStringWithShadow("Kill Aura", 2, 12 * pos, 0xFFFFFF);
+            pos++;
+        }
+        if(aafk.isActive()) {
+            minecraft.fontRenderer.drawStringWithShadow("Anti AFK", 2, 12 * pos, 0xFFFFFF);
+            pos++;
+        }
+        if(fc.isActive()) {
+            minecraft.fontRenderer.drawStringWithShadow("Freecam", 2, 12 * pos, 0xFFFFFF);
+            pos++;
+        }
+        if(rdr.isActive()) {
+            minecraft.fontRenderer.drawStringWithShadow("Text Radar", 2, 12 * pos, 0xFFFFFF);
+            pos++;
+        }
+        if(nswr.isActive()) {
+        	minecraft.fontRenderer.drawStringWithShadow("No Swear", 2, 12 * pos, 0xFFFFFF);
+        	pos++;
+        }
+	}
 	
 	public static void checkForKeyPress() {
 		if(ck.checkKey(Keyboard.KEY_F)) {
@@ -51,6 +93,9 @@ public class Vigilance {
 		}
 		if(ck.checkKey(Keyboard.KEY_B)) {
 			rdr.toggle();
+		}
+		if(ck.checkKey(Keyboard.KEY_N)) {
+			nswr.toggle();
 		}
 	}
 

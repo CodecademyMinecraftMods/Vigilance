@@ -17,8 +17,10 @@ public class Fly extends Hack {
 	@Override
 	public void turnOff() {
 		this.active = false;
-		this.minecraft.thePlayer.capabilities.allowFlying = false;
-		this.minecraft.thePlayer.capabilities.isFlying = false;
+		if(!this.minecraft.thePlayer.capabilities.isCreativeMode) {
+			this.minecraft.thePlayer.capabilities.allowFlying = false;
+			this.minecraft.thePlayer.capabilities.isFlying = false;
+		}
 	}
 	
 }

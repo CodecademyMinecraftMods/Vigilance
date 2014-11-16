@@ -500,6 +500,7 @@ public class GuiIngame extends Gui
         GL11.glDisable(GL11.GL_LIGHTING);
         GL11.glEnable(GL11.GL_ALPHA_TEST);
         if(Vigilance.rdr.isActive()) Vigilance.rdr.tick();
+        Vigilance.tick();
     }
 
     public void func_152126_a(float p_152126_1_, float p_152126_2_)

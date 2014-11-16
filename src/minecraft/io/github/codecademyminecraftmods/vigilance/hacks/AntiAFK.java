@@ -37,6 +37,12 @@ public class AntiAFK extends Hack {
 		case 5:
 			this.minecraft.thePlayer.jump();
 			break;
+		case 6:
+			this.minecraft.thePlayer.cameraPitch += 4F;
+			break;
+		case 7:
+			this.minecraft.thePlayer.cameraPitch -= 4F;
+			break;
 		default:
 			break;
 		}
